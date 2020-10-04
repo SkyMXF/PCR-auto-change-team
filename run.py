@@ -94,7 +94,7 @@ def try_once(func, exception):
 if __name__ == "__main__":
 
     while True:
-        for _ in range(3):
+        for _ in range(4):
             try:
                 time_str = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
                 print("[%s]Check rank..."%(time_str))
