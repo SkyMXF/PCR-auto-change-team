@@ -17,9 +17,10 @@ def refresh_rank():
     retry_wrapper(mouse_move.clickAdventureButton, DEFAULT_EXCEPTION, 2)
     retry_wrapper(mouse_move.clickPrincessArena, DEFAULT_EXCEPTION, 5)
 
-prev_team_page = -1
+team_page_list = [2, 3, 4, 5]
+team_page_pos = len(team_page_list)
 def change_team():
-    global prev_team_page
+    global team_page_list, team_page_pos
 
     window_func.activeNOX()
     delay.standard_delay(1.0)
@@ -39,10 +40,11 @@ def change_team():
     mouse_move.clickClearTeam()
     
     # random team info
-    team_page_id = random.randint(2, 5)
-    while team_page_id == prev_team_page:
-        team_page_id = random.randint(2, 5)
-    prev_team_page = team_page_id
+    team_page_pos += 1
+    if team_page_pos >= len(team_page_list):
+        team_page_pos = 0
+        random.shuffle(team_page_list)
+    team_page_id = team_page_list[team_page_pos]
     rankReverse = False # True if random.random() >= 0.5 else False
     switch12 = True if random.random() >= 0.5 else False
     time_str = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
