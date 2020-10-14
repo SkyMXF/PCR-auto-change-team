@@ -37,17 +37,17 @@ def clickChangeTeamButton():
 
 def clickCancelAll():
     # 点击空白区域取消所有操作
-    pos = (window_func.NOX_window_rect[0] + 552, window_func.NOX_window_rect[1] + 725)
+    pos = (window_func.NOX_window_rect[0] + 730, window_func.NOX_window_rect[1] + 920)
     for _ in range(5):
-        clickRandomPos((pos[0] + 20, pos[1] + 4), 140, 12)
+        clickRandomPos((pos[0] + 10, pos[1] + 2), 140, 12)
         delay.random_float_delay(0.1, 0.2)
 
 def clickClearTeam():
     # 清空队伍
-    pos = (window_func.NOX_window_rect[0] + 680, window_func.NOX_window_rect[1] + 595)
+    pos = (window_func.NOX_window_rect[0] + 850, window_func.NOX_window_rect[1] + 750)
     try_times = 0
     while not img_match.isEmptyTeam():
-        clickRandomPos((pos[0] + 20, pos[1] + 20), 60, 60)
+        clickRandomPos((pos[0] + 10, pos[1] + 10), 75, 90)
         try_times += 1
         if try_times >= 10:
             raise img_match.ButtonNotFoundException("clear team")
@@ -69,24 +69,24 @@ def clickMyTeamButton():
 
 def clickPreparedPage(page_id:int):
     # "我的队伍"界面选择指定队伍页1-5
-    pos = (window_func.NOX_window_rect[0] + 68 + (page_id - 1) * 191, window_func.NOX_window_rect[1] + 131)
-    clickRandomPos((pos[0] + 20, pos[1] + 10), 150, 20)
+    pos = (window_func.NOX_window_rect[0] + 85 + (page_id - 1) * 236, window_func.NOX_window_rect[1] + 175)
+    clickRandomPos((pos[0] + 20, pos[1] + 10), 193, 30)
     delay.random_float_delay(0.5, 0.3)
 
 def clickReverseRank():
     # "我的队伍"界面更改排序顺序
-    pos = (window_func.NOX_window_rect[0] + 1089, window_func.NOX_window_rect[1] + 137)
-    clickRandomPos((pos[0] + 20, pos[1] + 10), 80, 10)
+    pos = (window_func.NOX_window_rect[0] + 1366, window_func.NOX_window_rect[1] + 173)
+    clickRandomPos((pos[0] + 20, pos[1] + 10), 120, 25)
     delay.random_float_delay(0.5, 0.3)
 
 def clickPreparedTeam(team_id:int):
     # "我的队伍"界面选择队伍1-3
-    pos = (window_func.NOX_window_rect[0] + 949, window_func.NOX_window_rect[1] + 233 + (team_id - 1) * 159)
-    clickRandomPos((pos[0] + 20, pos[1] + 10), 170, 40)
+    pos = (window_func.NOX_window_rect[0] + 1191, window_func.NOX_window_rect[1] + 306 + (team_id - 1) * 200)
+    clickRandomPos((pos[0] + 20, pos[1] + 10), 226, 56)
     delay.random_float_delay(0.5, 0.3)
 
 def clickFinish():
     # 配队界面确认
-    pos = (window_func.NOX_window_rect[0] + 1017, window_func.NOX_window_rect[1] + 608)
-    clickRandomPos((pos[0] + 20, pos[1] + 10), 170, 40)
+    pos = (window_func.NOX_window_rect[0] + 1269, window_func.NOX_window_rect[1] + 766)
+    clickRandomPos((pos[0] + 20, pos[1] + 10), 225, 55)
     delay.random_float_delay(0.3, 0.3)

@@ -5,7 +5,7 @@ import pyautogui
 import delay
 import window_func
 
-template_dir = "aimImg"
+template_dir = "template1600"
 
 class ButtonNotFoundException(Exception):
     def __init__(self, button_subs="unknown button"):
